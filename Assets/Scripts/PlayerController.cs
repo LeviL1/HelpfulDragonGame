@@ -18,9 +18,14 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        moverDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        moverDirection = transform.TransformDirection(moverDirection);
-        moverDirection *= speed;
+    if (_cc.isGrounded != true)
+    {
+      moverDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+      moverDirection = transform.TransformDirection(moverDirection);
+      moverDirection *= speed;
     }
-    controller.Move(moverDirection* Time.deltaTime);
+    _cc.Move(moverDirection * Time.deltaTime);
+    }
+    
+    
 }
