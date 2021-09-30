@@ -559,17 +559,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1762028148 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1762028148, guid: 05e6a87d790bf7743bdcf9c5d7755771, type: 3}
-  m_PrefabInstance: {fileID: 2896776537605395897}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3b5d8f0bb4d3b04ab746b27dd9b8eeb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2068375500 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8752889038995642603, guid: a7d63fe4653d7e14596fd1115145b0ef, type: 3}
@@ -588,63 +577,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.4923334, y: 2.2673626, z: 3.1002693}
   m_Center: {x: -0.08793783, y: 0.6336813, z: 0.28341103}
---- !u!1001 &2896776537605395897
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6141965265122974859, guid: 05e6a87d790bf7743bdcf9c5d7755771, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6141965265122974859, guid: 05e6a87d790bf7743bdcf9c5d7755771, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 23.51
-      objectReference: {fileID: 0}
-    - target: {fileID: 6141965265122974859, guid: 05e6a87d790bf7743bdcf9c5d7755771, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 27.94
-      objectReference: {fileID: 0}
-    - target: {fileID: 6141965265122974859, guid: 05e6a87d790bf7743bdcf9c5d7755771, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 24.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6141965265122974859, guid: 05e6a87d790bf7743bdcf9c5d7755771, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6141965265122974859, guid: 05e6a87d790bf7743bdcf9c5d7755771, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6141965265122974859, guid: 05e6a87d790bf7743bdcf9c5d7755771, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6141965265122974859, guid: 05e6a87d790bf7743bdcf9c5d7755771, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6141965265122974859, guid: 05e6a87d790bf7743bdcf9c5d7755771, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6141965265122974859, guid: 05e6a87d790bf7743bdcf9c5d7755771, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6141965265122974859, guid: 05e6a87d790bf7743bdcf9c5d7755771, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6141965265123328171, guid: 05e6a87d790bf7743bdcf9c5d7755771, type: 3}
-      propertyPath: m_Name
-      value: BeholderPolyart
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 05e6a87d790bf7743bdcf9c5d7755771, type: 3}
 --- !u!1001 &8752889038814723879
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -700,10 +632,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dragon
       objectReference: {fileID: 0}
+    - target: {fileID: 8752889038995642603, guid: a7d63fe4653d7e14596fd1115145b0ef, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 8752889038995642614, guid: a7d63fe4653d7e14596fd1115145b0ef, type: 3}
       propertyPath: enemy
       value: 
-      objectReference: {fileID: 1762028148}
+      objectReference: {fileID: 0}
     - target: {fileID: 8752889038995642614, guid: a7d63fe4653d7e14596fd1115145b0ef, type: 3}
       propertyPath: fireRate
       value: 1
