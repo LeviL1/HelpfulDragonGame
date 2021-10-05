@@ -7,6 +7,7 @@ public class Target : MonoBehaviour
   public float health = 50f;
   private NavMeshAgent agent;
   public GameObject player;
+    public ParticleSystem particle;
   public float damage = 15;
   private float nextAttackTime = 0f;
   public float attackRate = 1;
@@ -29,6 +30,7 @@ public class Target : MonoBehaviour
       nextAttackTime = Time.time + attackRate;
       StartCoroutine(AttackRoutine());
     }
+        else { StopCoroutine(AttackRoutine()); }
   }
   
   public void TakeDamage(float dmg)
@@ -38,13 +40,20 @@ public class Target : MonoBehaviour
   IEnumerator AttackRoutine()
   {
     
-      yield return new WaitForSeconds(0.25f);
-
-    player.GetComponent<PlayerHealth>().TakePlayerDamage(damage);
-    yield return new WaitForSeconds(3f);
+      yield return new WaitForSeconds(3f);
+    Physics.SphereCast(transform.position, 5f, transform.forward, out RaycastHit hitInfo); 
+        if(agent.remainingDistance <= 7) { StopCoroutine(AttackRoutine()); }
+        particle.Play();
+        if (hitInfo.collider.tag == "Player") 
+        {
+            PlayerHealth health = hitInfo.collider.GetComponent<PlayerHealth>();
+            health.TakePlayerDamage(30);
+        }
+        else { StopCoroutine(AttackRoutine()); }
+    
       
     
   }
-
+   
 
 }
