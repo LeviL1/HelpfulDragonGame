@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Shooting : MonoBehaviour
 {
-  public TakeDamage enemy;
+  public Target enemy;
   public float dmg;
   public float fireRate;
 

@@ -40,8 +40,8 @@ public class Target : MonoBehaviour
   IEnumerator AttackRoutine()
   {
     
-      yield return new WaitForSeconds(3f);
-    Physics.SphereCast(transform.position, 5f, transform.forward, out RaycastHit hitInfo); 
+        yield return new WaitForSeconds(3f);
+        Physics.SphereCast(transform.position, 5f, transform.forward, out RaycastHit hitInfo); 
         if(agent.remainingDistance <= 7) { StopCoroutine(AttackRoutine()); }
         particle.Play();
         if (hitInfo.collider.tag == "Player") 
