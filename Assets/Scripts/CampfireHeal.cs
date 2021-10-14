@@ -18,6 +18,7 @@ public class CampfireHeal : MonoBehaviour
     {
       inTrigger = true;
       StartCoroutine(healthCouroutine(inTrigger));
+      inTrigger = false;
     }
   }
   private void OnTriggerExit(Collider other)
@@ -30,9 +31,9 @@ public class CampfireHeal : MonoBehaviour
   }
   IEnumerator healthCouroutine(bool trigger) 
   {
-    health.playerHealth += 0.05f;
-    if (trigger == true) { health.playerHealth += 1; }
-    else { yield return new WaitForSeconds(1f); }
+    health.playerHealth += 0.07f;
+    
+    yield return new WaitForSeconds(1f);
     
   }
 }
