@@ -6,6 +6,7 @@ public class CampfireHeal : MonoBehaviour
 {
   private PlayerHealth health;
   private bool inTrigger = false;
+  
     // Start is called before the first frame update
     void Start()
     {
@@ -31,8 +32,13 @@ public class CampfireHeal : MonoBehaviour
   }
   IEnumerator healthCouroutine(bool trigger) 
   {
-    health.playerHealth += 0.07f;
-    
+    if (inTrigger == true)
+    {
+      if (health.playerHealth < 100)
+      {
+        health.playerHealth += 1;
+      }
+    }
     yield return new WaitForSeconds(1f);
     
   }

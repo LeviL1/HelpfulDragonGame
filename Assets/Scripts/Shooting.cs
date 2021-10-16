@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Shooting : MonoBehaviour
 {
-  public Target enemy;
+  public TakeDamage enemy;
   public float dmg;
   public float fireRate;
 
@@ -34,10 +34,11 @@ public class Shooting : MonoBehaviour
     RaycastHit hit;
     if(Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, Mathf.Infinity))
     {
-      TakeDamage target = hit.transform.GetComponent<TakeDamage>();
-      if(target != null)
-      {
-        target.FireBreath();
+      Debug.Log(hit.transform.name);
+      if (hit.transform.CompareTag("Enemy"))
+        {
+        enemy = hit.transform.GetComponent<TakeDamage>();
+        enemy.FireBreath();
       }
     }
   }
