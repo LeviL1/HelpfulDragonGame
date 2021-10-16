@@ -6,23 +6,31 @@ public class TakeDamage : MonoBehaviour
 {
   public float health = 100;
   private Animator anim;
+  public float pointAmount = 100;
+  private ScoreKeep score;
   private void Start()
   {
+    score = GameObject.FindGameObjectWithTag("Score").GetComponent<ScoreKeep>();
     anim = this.GetComponent<Animator>();
   }
-  private void Update()
+  private void FixedUpdate()
   {
     if (health <= 0) { Die(); }
   }
-  public void FireBreath() 
+  public void FireBreath(float dmg) 
   {
     anim.Play("Dizzy");
-    health -= 20;
+    health -= dmg;
     
   }
   public void Die() 
   {
+    
     anim.Play("Die");
+    health = 1f;
     Destroy(this.gameObject, 2f);
+    score.AddPoints(pointAmount);
+
+
   }
 }

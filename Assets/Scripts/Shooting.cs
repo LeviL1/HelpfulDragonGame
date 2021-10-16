@@ -7,7 +7,7 @@ public class Shooting : MonoBehaviour
   public TakeDamage enemy;
   public float dmg;
   public float fireRate;
-
+  
   public ParticleSystem system;
   public GameObject impactEffect;
   private float nextTimeToFire = 0f;
@@ -38,7 +38,7 @@ public class Shooting : MonoBehaviour
       if (hit.transform.CompareTag("Enemy"))
         {
         enemy = hit.transform.GetComponent<TakeDamage>();
-        enemy.FireBreath();
+        enemy.FireBreath(dmg);
       }
     }
   }

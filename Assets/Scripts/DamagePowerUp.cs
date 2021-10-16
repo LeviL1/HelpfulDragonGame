@@ -6,14 +6,14 @@ using UnityEngine.Rendering;
 public class DamagePowerUp : MonoBehaviour
 {
   public GameObject postProcess;
-  public Material mat;
-  private Color color;
+
+  private Transform mushroomScale;
   private void Start()
   {
-    color = mat.color;
-    mat.color = new Color(200, 52, 159, 255);
+
     
-    
+
+
   }
   private void OnTriggerEnter(Collider other)
   {
@@ -23,7 +23,7 @@ public class DamagePowerUp : MonoBehaviour
     {
         Collider col = this.gameObject.GetComponent<Collider>();
         col.enabled = false;
-        mat.color = color;
+        
         
          
         StartCoroutine(DoubleDamageRoutine());
@@ -37,8 +37,12 @@ public class DamagePowerUp : MonoBehaviour
     Shooting dmg = FindObjectOfType<Shooting>();
     dmg.dmg *= 2;
     postProcess.SetActive(true);
-    yield return new WaitForSeconds(2f);
+    yield return new WaitForSeconds(4f);
     postProcess.SetActive(false);
-    dmg.dmg /= 2f; 
+
+    
+    dmg.dmg /= 2f;
+    yield return new WaitForSeconds(1);
+    this.gameObject.SetActive(false);
   }
 }
