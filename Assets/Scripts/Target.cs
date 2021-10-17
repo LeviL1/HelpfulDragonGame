@@ -41,11 +41,11 @@ public class Target : MonoBehaviour
   {
     
         yield return new WaitForSeconds(3f);
-        Physics.SphereCast(particle.transform.position, 3f, particle.transform.forward, out RaycastHit hitInfo);
+        Physics.SphereCast(particle.gameObject.transform.position, 1f, particle.gameObject.transform.forward, out RaycastHit hitInfo, Mathf.Infinity);
     if (agent.remainingDistance <= 7) { StopCoroutine(AttackRoutine()); }
     anim.Play("Attack01");
     particle.Play();
-    if (hitInfo.collider.tag == "Player" && hitInfo.collider != null) 
+    if (hitInfo.collider.tag == "Player") 
         {
             PlayerHealth health = hitInfo.collider.GetComponent<PlayerHealth>();
             health.TakePlayerDamage(30);
